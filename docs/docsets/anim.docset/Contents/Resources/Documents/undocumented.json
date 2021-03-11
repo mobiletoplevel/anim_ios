@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/czhang/Desktop/anim/src/anim.swift",
+      "line": 12,
+      "symbol": "View",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/czhang/Desktop/anim"
+}

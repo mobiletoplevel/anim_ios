@@ -1,0 +1,77 @@
+fastlane_version "2.14.2"
+default_platform :ios
+
+platform :ios do
+
+  desc "Runs all the tests"
+  lane :test do
+
+    # Checks linting
+    swiftlint(
+      mode: :lint,
+      config_file: "./.swiftlint.yml",
+      strict: true,
+      ignore_exit_status: false
+    )
+
+    set_info_plist_value(path: "./test/Info.plist", key: "delayMultiplier", value: 4)
+
+    # Runs unit tests on macOS
+    scan(
+      project: "anim.xcodeproj",
+      scheme: "anim-macos",
+      code_coverage: true,
+      clean: true
+    )
+
+    # Runs unit tests on tvOS
+    scan(
+      project: "anim.xcodeproj",
+      scheme: "anim-tvos",
+      code_coverage: true,
+      clean: true
+    )
+
+    # Runs unit tests on iOS 8, 9 and 10
+    scan(
+      project: "anim.xcodeproj",
+      scheme: "anim-ios",
+      derived_data_path: "./build/",
+      code_coverage: true,
+      clean: true
+    )
+
+    set_info_plist_value(path: "./test/Info.plist", key: "delayMultiplier", value: 1)
+  end
+
+  desc "Pushes changes to git repository"
+  lane :pods do
+
+    # Needs to be clean, commited
+    ensure_git_status_clean
+
+    # Test the library
+    test()
+
+    # Increase minor version number
+    version = version_bump_podspec(path: "anim.podspec", bump_type: "patch")
+    increment_version_number(
+      version_number: version
+    )
+
+    # Create docs and commit repository
+    # Generate docs
+    jazzy
+
+    # Push to repository
+    updated_files = ["./anim.podspec", "./anim/Info.plist", "./test/Info.plist", "./examples/shared/Info.plist", "./docs/"]
+    git_add(path: updated_files)
+    git_commit(path: updated_files, message: "Pushing changes to Cocoapods")
+    add_git_tag(tag: version)
+    ensure_git_status_clean
+    push_to_git_remote
+
+    # Push to cocoapods
+    sh "./cocoapods.sh"
+  end
+end

@@ -1,0 +1,12 @@
+os: osx
+language: swift
+osx_image: xcode11.2
+before_install:
+  - brew update
+  - brew outdated swiftlint || brew upgrade swiftlint
+install: 
+  - sudo gem install fastlane -n /usr/local/bin
+script:
+  - ./fastlane/travis.sh
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'anim'
