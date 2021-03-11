@@ -1,11 +1,11 @@
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/logo.png" alt="anim: Swift animation library for iOS, tvOS and macOS." width="446">
+<img src="https://github.com/onurersel/anim/raw/master/img/logo.png" alt="anim: Swift animation library for iOS, tvOS and macOS." width="446">
 
 -----
 [![CocoaPods](https://img.shields.io/cocoapods/v/anim.svg)](https://cocoapods.org/pods/anim)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Build Status](https://travis-ci.org/czhang/anim.svg?branch=master)](https://travis-ci.org/czhang/anim)
-[![codecov.io](https://codecov.io/github/czhang/anim/coverage.svg?branch=master)](https://codecov.io/github/czhang/anim?branch=master)
-[![codebeat badge](https://codebeat.co/badges/67e95eda-c701-43d0-921c-541a427750bd)](https://codebeat.co/projects/github-com-czhang-anim)
+[![Build Status](https://travis-ci.org/onurersel/anim.svg?branch=master)](https://travis-ci.org/onurersel/anim)
+[![codecov.io](https://codecov.io/github/onurersel/anim/coverage.svg?branch=master)](https://codecov.io/github/onurersel/anim?branch=master)
+[![codebeat badge](https://codebeat.co/badges/67e95eda-c701-43d0-921c-541a427750bd)](https://codebeat.co/projects/github-com-onurersel-anim)
 
 
 `anim` is an animation library written in Swift with a simple, declarative API in mind.
@@ -34,13 +34,13 @@ It uses `NSAnimationContext` on macOS.
 
 Example projects are available at `examples/` folder and as targets on XCode project.
 
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/example-bonfire.gif"  align="left" alt="Bonfire" width="135">
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/example-profile.gif"  align="left" alt="Profile" width="135">
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/example-menu.gif"  align="left" alt="Menu" width="135">
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/example-message.gif"  alt="Message" width="135">
+<img src="https://github.com/onurersel/anim/raw/master/img/example-bonfire.gif"  align="left" alt="Bonfire" width="135">
+<img src="https://github.com/onurersel/anim/raw/master/img/example-profile.gif"  align="left" alt="Profile" width="135">
+<img src="https://github.com/onurersel/anim/raw/master/img/example-menu.gif"  align="left" alt="Menu" width="135">
+<img src="https://github.com/onurersel/anim/raw/master/img/example-message.gif"  alt="Message" width="135">
 
 ---
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/installation.png" alt="Installation" width="293">
+<img src="https://github.com/onurersel/anim/raw/master/img/installation.png" alt="Installation" width="293">
 
 #### Cocoapods
 
@@ -51,7 +51,7 @@ pod 'anim'
 #### Carthage
 
 ```ogdl
-github "czhang/anim"
+github "onurersel/anim"
 ```
 
 #### Manually
@@ -59,9 +59,9 @@ github "czhang/anim"
 Or simply drag the swift files inside `src/` folder into your project.
 
 ---
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/api.png" alt="API" width="127">
+<img src="https://github.com/onurersel/anim/raw/master/img/api.png" alt="API" width="127">
 
-For complete documentation, visit [http://czhang.github.io/anim/](http://czhang.github.io/anim/).
+For complete documentation, visit [http://onurersel.github.io/anim/](http://onurersel.github.io/anim/).
 
 Initialize animations with `anim` constructor.
 
@@ -178,6 +178,6 @@ anim.defaultSettings.ease = .easeInOutCubic
 `anim.Ease` exposes a bunch of easing options.
 
 ---
-<img src="https://github.com/mobiletoplevel/anim_ios/raw/master/img/license.png" alt="License" width="163">
+<img src="https://github.com/onurersel/anim/raw/master/img/license.png" alt="License" width="163">
 
 `anim` is released under the MIT license. See LICENSE for details.
